@@ -1,20 +1,23 @@
-define(['controllers/Controllers', 'routes/Routes', 'jquery',  'jquery-ui'], function(Controllers, Routes) {
+define(['controllers/Controllers', 'utils/routes', 'jquery',  'jquery-ui'], function(Controllers, routes) {
 
   var TugBoatApp = (function() {
     var $appEl = $('#tugboat');
 
     function renderPage(hashName) {
+      var ctrl = false;
       switch(hashName) {
         case '#add-person' :
-          $appEl.empty().append(Controllers.AddPerson);
+          ctrl = Controllers.AddPerson;
           break;
         default  :
-          $appEl.empty().append('HOME PAGE');
+          ctrl = Controllers.ListPeople;
       }
+
+      $appEl.empty().append(ctrl);
     }
-    Routes.evts.addListener('URL_CHANGE', renderPage);
+    routes.evts.addListener('URL_CHANGE', renderPage);
     (function init() {
-      renderPage(Routes.current);
+      renderPage(routes.current);
     }());
   }());
 });

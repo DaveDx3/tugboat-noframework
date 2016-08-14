@@ -1,11 +1,10 @@
-define(['controllers/AddPerson',
-        'utils/EventHandler',
-        'jquery',
-        'jquery-ui'],
-  function(AddPerson, EventHandler) {
+define(['controllers/ListPeople',
+        'controllers/AddPerson'],
+  function(ListPeople, AddPerson) {
     var Controllers = (function() {
       return {
-        'AddPerson' : AddPerson
+        'ListPeople' : ListPeople,
+        'AddPerson'  : AddPerson
       }
     }());
   return Controllers;
