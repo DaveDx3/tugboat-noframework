@@ -1,7 +1,7 @@
 define(['utils/getTemplate'], function(getTemplate) {
 
   var params = {
-    template : '/js/tugboat/controllers/templates/AddPerson.hbs'
+    template : '/js/tugboat/controllers/templates/AddPerson.html'
   };
 
   var AddPerson = (function() {

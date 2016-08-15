@@ -2,7 +2,7 @@ define(['utils/getTemplate', 'utils/Model'], function(getTemplate, Model) {
 
   var params = {
     api : 'https://jsonplaceholder.typicode.com/users',
-    template : '/js/tugboat/controllers/templates/ListPeople.hbs'
+    template : '/js/tugboat/controllers/templates/ListPeople.html'
   };
 
   var ListPeople = (function() {
