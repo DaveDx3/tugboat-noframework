@@ -1,16 +1,28 @@
 define(['utils/getTemplate', 'utils/Model'], function(getTemplate, Model) {
+
+  var params = {
+    api : 'https://jsonplaceholder.typicode.com/users',
+    template : '/js/tugboat/controllers/templates/ListPeople.hbs'
+  };
+
   var ListPeople = (function() {
     var $el = $('<div />'),
-      model = new Model('https://jsonplaceholder.typicode.com/users');
+      model = new Model(params.api);
 
-    model.getData().then(function(data) {
-      getTemplate('/js/tugboat/controllers/templates/ListPeople.hbs', {'people' : data})
-        .done(function(content){
-          $el.append(content);
-        });
-    });
+    function init() {
+      // setup page functionality here
+    }
 
-    return $el;
+    return function() {
+      model.getData().then(function(data) {
+        getTemplate(params.template, {'people' : data})
+          .done(function(content){
+            $el.empty().append(content);
+            init();
+          });
+      });
+      return $el;
+    }
   }());
 
   return ListPeople;

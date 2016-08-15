@@ -3,8 +3,10 @@ define(['controllers/ListPeople',
   function(ListPeople, AddPerson) {
     var Controllers = (function() {
       return {
-        'ListPeople' : ListPeople,
-        'AddPerson'  : AddPerson
+        'AddPerson'    : AddPerson,
+        'ListPeople'   : ListPeople,
+        'UpdatePerson' : false,
+        'DeletePerson' : false
       }
     }());
   return Controllers;

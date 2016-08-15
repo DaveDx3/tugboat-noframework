@@ -7,11 +7,9 @@ define(['handlebars', 'jquery',  'jquery-ui'], function(Handlebars) {
     getData : function() {
       var _this = this,
         d = $.Deferred();
-
       $.get(_this.path).then(function(data) {
         d.resolve(data);
       });
-
       return d.promise();
     }
   }
