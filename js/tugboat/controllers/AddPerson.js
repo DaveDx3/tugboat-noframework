@@ -1,21 +1,26 @@
-define(['utils/getTemplate'], function(getTemplate) {
-
+define(['utils/getTemplate', 'utils/Model'], function(getTemplate, Model) {
   var params = {
-    template : '/js/tugboat/controllers/templates/AddPerson.html'
+    api : 'http://tugboat-api01.dmm.io:8080/person/save',
+    template : '/js/tugboat/controllers/templates/PersonForm.html'
   };
 
   var AddPerson = (function() {
-    var $container = $('<div />');
+    var $container = $('<div />'),
+      model = new Model(params.api);
 
-    function init() {
-      // setup page functionality here
+    function init(content) {
+      $('#personForm').on('submit', function() {
+        model.post($(this).serializeObject()).done(function() {
+          window.location.hash = '/people-list';
+        });
+      });
     }
 
     return function() {
       getTemplate(params.template)
         .done(function(content){
           $container.empty().append(content);
-          init();
+          init(content);
         });
       return $container;
     }

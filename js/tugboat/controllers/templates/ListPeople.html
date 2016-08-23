@@ -1,9 +1,27 @@
-
-<h4>People List</h4>
-<div class="body">
-    <ul class='people-list'>
-        {{#each people}}
-            <li>{{id}}, {{name}}, {{address.city}}</li>
-        {{/each}}
-    </ul>
-</div>
+<section class="people-list">
+  <table class="table table-striped" ng-show="peopleData">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    {{#each people}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{firstName}}</td>
+      <td>{{lastName}}</td>
+      <td>{{email}}</td>
+      <td>{{address.city}}, {{address.country}}</td>
+      <td><a href="/#/people/{{id}}/edit">edit</a></td>
+      <td><a href="javascript:void(0);" ng-click="delete(person)">delete</a></td>
+    </tr>
+    {{/each}}
+  </table>
+  <p><a href="#/add-person">Add Person</a></p>
+</section>

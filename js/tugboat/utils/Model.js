@@ -1,17 +1,32 @@
-define(['handlebars', 'jquery',  'jquery-ui'], function(Handlebars) {
-  var Model = function(path) {
-    this.path = path;
-  };
+define(['jquery',  'jquery-ui'], function() {
 
-  Model.prototype = {
-    getData : function() {
-      var _this = this,
-        d = $.Deferred();
-      $.get(_this.path).then(function(data) {
-        d.resolve(data);
+  var Model = (function() {
+
+    function call(path, type, data) {
+      return $.ajax({
+        type: type,
+        url: path,
+        data: data,
+        contentType: "application/json",
+        dataType: 'json'
       });
-      return d.promise();
     }
-  }
+
+    var Model = function(path) {
+      this.path = path;
+    };
+
+    Model.prototype = {
+      get : function() {
+        return call(this.path);
+      },
+      post : function(data) {
+        return call(this.path, 'POST', JSON.stringify(data));
+      }
+    }
+
+    return Model;
+  }());
+
   return Model;
 });

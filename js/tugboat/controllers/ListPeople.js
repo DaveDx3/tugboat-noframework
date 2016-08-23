@@ -1,7 +1,7 @@
 define(['utils/getTemplate', 'utils/Model'], function(getTemplate, Model) {
 
   var params = {
-    api : 'https://jsonplaceholder.typicode.com/users',
+    api : 'http://tugboat-api01.dmm.io:8080/person/',
     template : '/js/tugboat/controllers/templates/ListPeople.html'
   };
 
@@ -14,7 +14,7 @@ define(['utils/getTemplate', 'utils/Model'], function(getTemplate, Model) {
     }
 
     return function() {
-      model.getData().then(function(data) {
+      model.get().done(function(data) {
         getTemplate(params.template, {'people' : data})
           .done(function(content){
             $el.empty().append(content);

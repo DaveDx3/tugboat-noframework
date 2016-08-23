@@ -1,0 +1,54 @@
+<section class="person-form">
+  <form name="personForm" id="personForm" action="javascript:void(0);">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input class="form-control" id="firstname" name="firstName" placeholder="first name" value="{{firstName}}" />
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input class="form-control" id="lastname" name="lastName" placeholder="last name" value="{{lastName}}" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" id="email" name="email" placeholder="email" value="{{email}}" />
+          </div>
+          <div class="form-group">
+            <label for="streetAddress">Street Address</label>
+            <input class="form-control" id="streetAddress" name="address[streetAddress]" placeholder="street address" value="{{address.streetAddress}}" />
+          </div>
+          <div class="form-group">
+            <label for="streetAddress2">Street Address 2</label>
+            <input class="form-control" id="streetAddress2" name="address[streetAddress2]" placeholder="street address 2" value="{{address.streetAddress2}}" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input class="form-control" id="city" name="address[city]" placeholder="city"value="{{address.city}}" />
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input class="form-control" id="state" name="address[state]" placeholder="state" value="{{address.state}}" />
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input class="form-control" id="country" name="address[country]" placeholder="country" value="{{address.country}}" />
+          </div>
+          <div class="form-group">
+            <label for="postalCode">Postal Code</label>
+            <input class="form-control" id="postalCode" name="address[postalCode]" placeholder="postal code" value="{{address.postalCode}}" />
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Save</button>
+      <button type="button" class="btn">undo</button>
+      <button class="btn" type="button">delete</button>
+      <a href="#/people" class="btn btn-default">Cancel</a>
+    </div>
+  </form>
+</section>
+

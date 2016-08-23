@@ -19,7 +19,7 @@ require.config({
   }
 });
 
-require(['TugBoatApp'],
+require(['TugBoatApp', 'utils/Extensions'],
   function () {
 
   }

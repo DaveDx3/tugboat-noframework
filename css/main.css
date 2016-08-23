@@ -1,8 +1,34 @@
-r.people-list table {
-    margin-top: 20px;
-    width: 100%;
+h2 {
+    margin-bottom: 20px;
 }
 
-.people-list table th {
+form .row {
+    margin-bottom: 50px;
+}
 
+form h3 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.post-data {
+    float: right;
+    width: 20%;
+}
+
+.person-form {
+    float: left;
+    width: 75%;
+}
+
+.person-form input {
+    width: 300px;
+}
+
+a.btn.btn-default {
+    border: none;
+    background-color: #e6e6e6;
+    background-image: none;
+    box-shadow: none;
 }
