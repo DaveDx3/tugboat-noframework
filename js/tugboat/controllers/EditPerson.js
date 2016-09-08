@@ -1,4 +1,4 @@
-define(['utils/getTemplate', 'utils/Model', 'utils/routes'], function(getTemplate, Model, routes) {
+define(['utils/getTemplate', 'utils/Model', 'utils/routes', 'utils/form'], function(getTemplate, Model, routes, Form) {
 
   var params = {
     api : 'http://tugboat-api01.dmm.io:8080/person/show/[id]',
@@ -10,7 +10,10 @@ define(['utils/getTemplate', 'utils/Model', 'utils/routes'], function(getTemplat
       model = false;
 
     function init(data) {
-
+      console.log('init');
+      var personForm = new Form({
+        formSel : 'form#personForm'
+      })
     }
 
     return function(url) {
